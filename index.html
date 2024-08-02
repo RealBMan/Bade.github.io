@@ -13,11 +13,11 @@
             <nav>
                 <!---------------img src="" class="logo"-------------->
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-text">
@@ -102,7 +102,7 @@
                     <div class="layer">
                         <h3>Server Based Multiplayer Game</h3>
                         <p>This is an action game hosted on a server that allows multiple players to join.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/RealBMan/C-Server-Game/blob/main/README.md"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -110,7 +110,7 @@
                     <div class="layer">
                         <h3>Adventure Game</h3>
                         <p>An Adventure game that incoperates multiple accessibility features.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/RealBMan/Modified-Adventure-Game/blob/main/README.md"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -118,18 +118,43 @@
                     <div class="layer">
                         <h3>Sound Manipulation</h3>
                         <p>This is a program that manipulates audio files such as removing/adding an echo to the file.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/RealBMan/Sound-Manipulation-C/blob/main/README.md"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">See more</a>
+            <a href="https://github.com/RealBMan" class="btn">See more</a>
         </div>
     </div>
-    
+
     <!---Contact Form----->
-
-
-
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p> <i class="fa-solid fa-paper-plane"></i> akinadetunji17@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/akinbowale"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="Images/resume.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <!---
+         <div class="copyright">
+            <p>Copyright © Kevin. Made with <i class="fa-solid fa-heart"></i> by Easy Tutorials</p>
+        </div>
+        -->
+    </div>
     <script>
 
         var tablinks = document.getElementsByClassName("tab-links");
@@ -144,10 +169,23 @@
             }
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
-
         }
-
     </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby8j0c8gX1SeBdwicRdB7qEQieqrC1o3YVVa-I84qmR957hCuOTBFtD5SX_MmjQfjI/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {msg.innerHTML = "Message sent successfully" 
+            setTimeout(function(){msg.innerHTML = ""}, 5000)
+            form.reset()})
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
     
 </body>
 </html>
