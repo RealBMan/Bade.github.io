@@ -1,2 +1,2 @@
 # Portfolio
-This is a perosnal website I have built which includes a short summary of my professional career so far
+This is a perosnal website I have built which includes a visual representation of my resume including some of my career aspirations. 
