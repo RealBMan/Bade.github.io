@@ -275,12 +275,15 @@ nav ul li a:hover::after{
     margin-top: 30px;
 }
 .social-icons a{
+    font-family: inherit;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     margin-right: 15px;
     color: #ababab;
+    color: white;
     display: inline-block;
     transition: transform 0.5s;
+    gap: 5px;
 }
 .social-icons a:hover{
     color: #ff004f;
